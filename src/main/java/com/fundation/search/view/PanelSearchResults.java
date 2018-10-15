@@ -14,16 +14,14 @@ package main.java.com.fundation.search.view;
 
 import javax.swing.*;
 
-public class PanelTestResults extends JPanel
+public class PanelSearchResults extends JPanel
 {
     private JLabel labelResults;
 
-    public PanelTestResults()
+    public PanelSearchResults()
     {
         setBorder(BorderFactory.createTitledBorder("Search Results"));
         labelResults = new JLabel("No results found!!");
         add(labelResults);
     }
-
-
 }

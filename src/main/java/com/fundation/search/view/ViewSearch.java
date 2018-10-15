@@ -1,4 +1,13 @@
 package main.java.com.fundation.search.view;
 
-public class ViewSearch {
+import javax.swing.*;
+
+public class ViewSearch
+{
+    public static void main(String []args)
+    {
+        MainWindow SearchC = new MainWindow();
+        SearchC.run();
+    }
+
 }
