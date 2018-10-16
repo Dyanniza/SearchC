@@ -26,8 +26,10 @@ public class PanelSearchParameters extends JPanel
     private JTextField fileName;
     private JTextField extension;
     private JButton buttonSearch;
+    private JButton buttonChooser;
     private JPanel panelFieldNames;
     private JPanel panelInputFields;
+    private JFileChooser fileChooser;
 
 
     public PanelSearchParameters()
@@ -51,6 +53,8 @@ public class PanelSearchParameters extends JPanel
         fileName = new JTextField(20);
         extension = new JTextField(20);
         buttonSearch = new JButton("Search");
+        buttonChooser = new JButton("...");
+        fileChooser = new JFileChooser("");
         panelFieldNames = new JPanel();
         panelFieldNames.setSize(10,100);
         //panelFieldNames.setBounds(0,0,15,100);
@@ -80,6 +84,7 @@ public class PanelSearchParameters extends JPanel
         panelInputFields.add(fileName);
         panelInputFields.add(extension);
         panelInputFields.add(buttonSearch);
+        panelInputFields.add(buttonChooser);
 
 
     }
@@ -98,9 +103,17 @@ public class PanelSearchParameters extends JPanel
 
             }
         });
-
-
     }
+    public  void setPathChooser()
+    {
+        buttonChooser.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
+
 
     public String getPath()
     {
@@ -116,6 +129,8 @@ public class PanelSearchParameters extends JPanel
     {
         return extension.getText();
     }
+
+
 
 
 
