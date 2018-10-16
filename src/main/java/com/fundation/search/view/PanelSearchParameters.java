@@ -16,7 +16,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
 
 public class PanelSearchParameters extends JPanel
 {
@@ -27,69 +26,68 @@ public class PanelSearchParameters extends JPanel
     private JTextField fileName;
     private JTextField extension;
     private JButton buttonSearch;
+    private JPanel panelFieldNames;
+    private JPanel panelInputFields;
+
 
     public PanelSearchParameters()
+    {
+
+        settings();
+        init();
+        getPathDialog();
+
+    }
+
+    public void settings()
     {
         setBorder(BorderFactory.createTitledBorder("Search Parameters"));
 
         labelPath = new JLabel("Path:");
+        //labelPath.setSize(20,10);
         labelFileName = new JLabel("FileName:");
         labelExtension = new JLabel("Extension:");
         textPath = new JTextField(20);
         fileName = new JTextField(20);
         extension = new JTextField(20);
         buttonSearch = new JButton("Search");
-        addCompoments();
-        getPath();
-
+        panelFieldNames = new JPanel();
+        panelFieldNames.setSize(10,100);
+        //panelFieldNames.setBounds(0,0,15,100);
+        panelInputFields = new JPanel();
     }
 
-    public void addCompoments()
+
+    public void init()
     {
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.anchor = GridBagConstraints.WEST;
-        constraints.insets = new Insets(20,20,50,10);
-        constraints.gridx = 0;
-        constraints.gridy = 0;
-        add(labelPath,constraints);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = GridBagConstraints.RELATIVE;
+        c.gridwidth = 1;
+        c.gridheight = 1;
+        c.insets = new Insets(2, 2, 2, 2);
+        c.anchor = GridBagConstraints.EAST;
 
-        constraints.gridx = 1;
-        add(textPath, constraints);
 
-        constraints.gridx = 1;
-        constraints.gridy = 1;
-        add(labelFileName, constraints);
+        setLayout(new GridLayout(1,2));
+        add(panelFieldNames);
+        add(panelInputFields);
+        panelFieldNames.add(labelPath);
+        panelFieldNames.add(labelFileName);
+        panelFieldNames.add(labelExtension);
 
-        constraints.gridx = 1;
-        add(fileName, constraints);
+        panelInputFields.add(textPath);
+        panelInputFields.add(fileName);
+        panelInputFields.add(extension);
+        panelInputFields.add(buttonSearch);
 
-        constraints.gridx = 3;
-        constraints.gridy = 3;
-        add(labelExtension, constraints);
 
-        constraints.gridx = 1;
-        add(extension, constraints);
-
-        constraints.gridx = 5;
-        constraints.gridy = 5;
-        constraints.gridwidth = 3;
-        constraints.anchor = GridBagConstraints.CENTER;
-        add (buttonSearch, constraints);
-    }
-
-    public void addCompoments2()
-    {
-        add(labelPath,BorderLayout.LINE_START);
-        add(textPath, BorderLayout.AFTER_LAST_LINE);
-        add(labelFileName, BorderLayout.AFTER_LAST_LINE);
-        add(fileName, BorderLayout.AFTER_LAST_LINE);
-        add(labelExtension,BorderLayout.AFTER_LAST_LINE);
-        add(extension, BorderLayout.AFTER_LAST_LINE);
-        add (buttonSearch, BorderLayout.CENTER);
     }
 
 
-    public void getPath()
+
+
+    public void getPathDialog()
     {
         buttonSearch.addActionListener(new ActionListener() {
 
@@ -103,5 +101,22 @@ public class PanelSearchParameters extends JPanel
 
 
     }
+
+    public String getPath()
+    {
+        return textPath.getText();
+    }
+
+    public String getFileName()
+    {
+        return fileName.getText();
+    }
+
+    public String getExtension()
+    {
+        return extension.getText();
+    }
+
+
 
 }
