@@ -11,7 +11,7 @@ package main.java.com.fundation.search.controler;
 
 public class Controller
 {
-    private View view;
+    private ViewSearch view;
     private Search search;
 
     public Controller()
@@ -27,7 +27,8 @@ public class Controller
     //This is what the View will return when the button is pressed
     private void getCriteriaView()
     {
-        //System.out.print("Hello");
+        System.out.print("Hello");
+        /*
         //obtaining what the view is passing for the parameters
         String path =view.getPanel().getPath();  //path
         String fileName =view.getPanel().getFileName(); //filename
@@ -36,6 +37,7 @@ public class Controller
 
         //This is the object that will pass to the Model the data
         List<FileResul> filesR=search.initSearch(path,fileName);
+
         //List<FileResult> filesR=search.initSearch(path,fileName, ext, dateA); //this is what the model is returned// sobrecargar el constructor
 
         //this is what the controller made for iterate all what the model is passed and set the result table
@@ -50,9 +52,10 @@ public class Controller
         //this cycle will go throw the objects returned by the model
         for(FileResult f: filesR)
         {
-            this.view.getPanel().getTable().addRow(new Object [] {f.getPath(),f.getFileName()}); // this is for return the added rows in the table the values wll return.
+            this.view.getPanel().getModel().addRow("{"+f.getPath()+","+f.getFileName()+"}"); // this is for return the added rows in the table the values wll return.
             //System.out.println("path:"+ f.getPath()+"; filename="+ f.getFileName());
         }
+        */
     }
 
 }
