@@ -6,31 +6,48 @@ import java.util.List;
 
 public class Search {
 
-    private List<String> result = new ArrayList<String>();
+    private List<FileResult> result = new ArrayList<>();
+    FileResult fr = new FileResult();
 
     public Search()
     {
     }
+    // This method search by path and filename, returns a list of FileResult objects
 
-    public List<String> initSearch(String path, String filename)
+    public List<FileResult> initSearch(String path, String filename)
     {
         File fileP = new File(path);
         File[] fileList= fileP.listFiles();
-        String fileName;
+        String fileN;
 
         for(File f : fileList)
         {
+            // If the f is directory the method is called again with the path and the filename
             if (f.isDirectory())
             {
                 initSearch(f.getPath(), filename) ;
             }
             else
             {
-                fileName = f.getName();
-                if (fileName.equals(filename))
+                fileN = f.getName();
+                // If filename is empty or filename found is equal to the parameter given is added to the result
+                if (filename.isEmpty() || fileN.equals(filename))
                 {
-                    result.add(f.getPath()) ;
+                    fr.setPath(f.getPath());
+                    fr.setFileName(f.getName());
+                    result.add(fr);
                 }
+
+              /*  if (ext){
+                    break
+                }*/
+
+                //FileResult fr = new FileResult();
+                    //fr.setPath(f.getPath());
+                    //fr.setFileName(f.getName());
+                    //result.add(fr);
+                    //fr.setExt();
+
             }
 
         }
