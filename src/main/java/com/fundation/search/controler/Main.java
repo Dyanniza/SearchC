@@ -18,8 +18,7 @@ public class Main
 
     public static void main (String [] arg)
     {
-        Controller control = new Controller();
-
+        Controller con = new Controller();
     }
 
 
