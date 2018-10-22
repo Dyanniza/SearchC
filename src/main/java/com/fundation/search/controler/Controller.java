@@ -9,19 +9,25 @@
 
 package main.java.com.fundation.search.controler;
 
+import main.java.com.fundation.search.model.Search;
+import main.java.com.fundation.search.view.ViewSearch;
+import main.java.com.fundation.search.view.PanelSearchParameters;
+import main.java.com.fundation.search.view.PanelSearchResults;
+
 public class Controller
 {
-    private ViewSearch view;
+    private PanelSearchParameters view;
     private Search search;
 
     public Controller()
     {
         /*Instance the view and the search model*/
-        view= new ViewSearch();
+        view= new PanelSearchParameters();
         search= new Search();
 
         /*this is when the action Listener is called for get the data from the view*/
         view.getPanel().getButton().addActionListener(e-> getCriteriaView());// getCriteriaView is the name of the button
+
     }
 
     //This is what the View will return when the button is pressed
