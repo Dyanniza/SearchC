@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2018 Jalasoft.
+ *  2643 Av Melchor Perez de Olguin, Colquiri Sud, Cochabamba, Bolivia.
+ *  All rights reserved.
+ *
+ *  This software is the confidential and proprietary information of  Jalasoft, ("Confidential Information").  You shall not
+ * disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
+ *
+ *
+ *
+ */
 package main.java.com.fundation.search.model;
 
 import java.io.File;
@@ -12,7 +23,7 @@ public class Search {
     public Search()
     {
     }
-    // This method search by path and filename, returns a list of FileResult objects
+    // This method searchs by path and filename, returns a list of FileResult objects
 
     public List<FileResult> initSearch(String path, String filename)
     {
@@ -22,7 +33,7 @@ public class Search {
 
         for(File f : fileList)
         {
-            // If the f is directory the method is called again with the path and the filename
+            // If  f is directory the method is called again with the path and the filename
             if (f.isDirectory())
             {
                 initSearch(f.getPath(), filename) ;
@@ -30,7 +41,7 @@ public class Search {
             else
             {
                 fileN = f.getName();
-                // If filename is empty or filename found is equal to the parameter given is added to the result
+                // If filename is empty or filename found is equal to the parameter given the path and file name is added to the result
                 if (filename.isEmpty() || fileN.equals(filename))
                 {
                     fr.setPath(f.getPath());
@@ -38,18 +49,7 @@ public class Search {
                     result.add(fr);
                 }
 
-              /*  if (ext){
-                    break
-                }*/
-
-                //FileResult fr = new FileResult();
-                    //fr.setPath(f.getPath());
-                    //fr.setFileName(f.getName());
-                    //result.add(fr);
-                    //fr.setExt();
-
             }
-
         }
 
         return result;
