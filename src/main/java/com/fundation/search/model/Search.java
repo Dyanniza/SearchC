@@ -6,7 +6,9 @@
  *  This software is the confidential and proprietary information of  Jalasoft, ("Confidential Information").  You shall not
  * disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
-package main.java.com.fundation.search.model;
+package com.fundation.search.model;
+
+import com.fundation.search.controler.Controller;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -14,12 +16,14 @@ import java.util.List;
 
 public class Search {
 
-    private List<FileResult> result = new ArrayList<>();
+    private List<FileResult> result = new ArrayList();
 
     public Search()
     {
     }
     // This method searchs by path and filename, returns a list of FileResult objects
+
+
 
     public List<FileResult> initSearch(String path, String filename)
     {
@@ -50,5 +54,14 @@ public class Search {
         }
 
         return result;
+    }
+    public static void main (String [] arg)
+    {
+        Search s= new Search();
+        for (FileResult path : s.initSearch("C:\\New folder", "test.txt"))
+        {
+            System.out.println(path);
+        }
+
     }
 }

@@ -5,7 +5,7 @@
  *  This software is the confidential and proprietary information of  Jalasoft, ("Confidential Information").  You shall not
  *  disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
-package main.java.com.fundation.search.view;
+package com.fundation.search.view;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -37,5 +37,10 @@ public class MainWindow extends JFrame
          getContentPane().add(panelSearch);
          getContentPane().add(panelResults);
          setVisible(true);
+     }
+
+     public PanelSearchParameters getPanel()
+     {
+         return panelSearch;
      }
 }

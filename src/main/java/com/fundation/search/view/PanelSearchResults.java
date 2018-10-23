@@ -6,7 +6,7 @@
  *  disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
 
-package main.java.com.fundation.search.view;
+package com.fundation.search.view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -49,8 +49,8 @@ public class PanelSearchResults extends JPanel
 
     public void init()
     {}
-    public void clearResults()
+    public TableModel getModel()
     {
-
+        return tableModel;
     }
 }
