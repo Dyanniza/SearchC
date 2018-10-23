@@ -44,7 +44,7 @@ public class PanelSearchParameters extends JPanel
     {
         settings();
         init();
-        getPathDialog();
+        //searchAction();
         setPathChooser();
     }
 
@@ -92,14 +92,14 @@ public class PanelSearchParameters extends JPanel
         add(panelButtons);
     }
 
-    public void getPathDialog()
+    public void searchAction()
     {
         buttonSearch.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent event) {
                 JOptionPane.showMessageDialog(PanelSearchParameters.this,
-                        "Path entered:\n" + textPath.getText());
+                        "Search Results:\n" + " No files found");
 
             }
         });
@@ -128,6 +128,16 @@ public class PanelSearchParameters extends JPanel
                 getSelectedPath();
             }
         });
+    }
+
+    public PanelSearchParameters getSearchPanel()
+    {
+        return this;
+    }
+
+    public JButton getButtonSearch()
+    {
+        return this.buttonSearch;
     }
 
     public String getPath()
