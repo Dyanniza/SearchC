@@ -25,7 +25,9 @@ public class PanelSearchResults extends JPanel
     private JTable tableResults;
 
     private JScrollPane tableScroll;
-    private String columnNames [] = {"File Name", "Location","Size", "Date Created"};
+    private Object columnNames [] = {"File Name", "Location","Size", "Date Created"};
+    private Object tableData[][]= { { "some", "text" ,"56 MG", "10/22/2018"}, { "some", "text" ,"56 MG", "10/22/2018"}};
+
 
     public PanelSearchResults()
     {
@@ -36,16 +38,19 @@ public class PanelSearchResults extends JPanel
     {
         setBorder(BorderFactory.createTitledBorder("Search Results"));
         labelResults = new JLabel("No results found!!");
-        tableModel = new DefaultTableModel();
+        tableModel = new DefaultTableModel(tableData, columnNames);
         tableResults = new JTable(tableModel);
+        setLayout(new BorderLayout());
+        tableScroll = new JScrollPane(tableResults);
+        add(tableScroll, BorderLayout.CENTER);
+        //add(labelResults);
         setVisible(true);
     }
 
     public void init()
+    {}
+    public void clearResults()
     {
-        setLayout(new BorderLayout());
-        tableScroll = new JScrollPane(tableResults);
-        add(tableScroll, BorderLayout.CENTER);
-        add(labelResults);
+
     }
 }
