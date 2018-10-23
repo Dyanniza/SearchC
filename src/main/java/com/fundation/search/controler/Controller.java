@@ -10,9 +10,12 @@
 package main.java.com.fundation.search.controler;
 
 import main.java.com.fundation.search.model.Search;
-import main.java.com.fundation.search.view.ViewSearch;
+import main.java.com.fundation.search.view.MainWindow;
 import main.java.com.fundation.search.view.PanelSearchParameters;
-import main.java.com.fundation.search.view.PanelSearchResults;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Controller
 {
@@ -21,13 +24,23 @@ public class Controller
 
     public Controller()
     {
+        System.out.println("Action from Controller" );
         /*Instance the view and the search model*/
+        MainWindow SearchC = new MainWindow();
         view= new PanelSearchParameters();
         search= new Search();
-
+        System.out.println("Action after search" );
         /*this is when the action Listener is called for get the data from the view*/
-        view.getPanel().getButton().addActionListener(e-> getCriteriaView());// getCriteriaView is the name of the button
+        //view.getSearchPanel().getButtonSearch().addActionListener(e-> getCriteriaView());// getCriteriaView is the name of the button
+        view.getButtonSearch().addActionListener(new ActionListener() {
 
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                JOptionPane.showMessageDialog(view,
+                        "Search Results:\n" + " No files found");
+                System.out.println("Action from Search button" );
+            }
+        });
     }
 
     //This is what the View will return when the button is pressed

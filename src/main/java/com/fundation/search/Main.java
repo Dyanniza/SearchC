@@ -10,17 +10,21 @@
  *
  */
 
-package main.java.com.fundation.search.controler;
+package main.java.com.fundation.search;
 
+
+import main.java.com.fundation.search.controler.Controller;
+import main.java.com.fundation.search.view.MainWindow;
 
 public class Main
 {
-/*
+
     public static void main (String [] arg)
     {
         Controller control = new Controller();
+        //MainWindow SearchC = new MainWindow();
 
     }
-*/
+
 
 }
