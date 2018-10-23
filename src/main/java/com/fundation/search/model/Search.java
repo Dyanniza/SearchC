@@ -5,9 +5,6 @@
  *
  *  This software is the confidential and proprietary information of  Jalasoft, ("Confidential Information").  You shall not
  * disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
- *
- *
- *
  */
 package main.java.com.fundation.search.model;
 
@@ -18,7 +15,6 @@ import java.util.List;
 public class Search {
 
     private List<FileResult> result = new ArrayList<>();
-    FileResult fr = new FileResult();
 
     public Search()
     {
@@ -44,6 +40,7 @@ public class Search {
                 // If filename is empty or filename found is equal to the parameter given the path and file name is added to the result
                 if (filename.isEmpty() || fileN.equals(filename))
                 {
+                    FileResult fr = new FileResult();
                     fr.setPath(f.getPath());
                     fr.setFileName(f.getName());
                     result.add(fr);
