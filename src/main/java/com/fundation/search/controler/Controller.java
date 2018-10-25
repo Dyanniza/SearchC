@@ -7,16 +7,18 @@
  * disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
 
-package com.fundation.search.controler;
+package main.java.com.fundation.search.controler;
 
-import com.fundation.search.model.Search;
-import com.fundation.search.model.FileResult;
-import com.fundation.search.view.MainWindow;
+import main.java.com.fundation.search.model.Search;
+import main.java.com.fundation.search.model.FileResult;
+import main.java.com.fundation.search.view.MainWindow;
 
 
+import javax.swing.table.TableColumn;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 public class Controller
 {
@@ -56,7 +58,7 @@ public class Controller
 
         //This is the object that will pass to the Model the data
         //List<FileResult> filesR=search.initSearch(path,fileName);
-        List<FileResult> filesR=search.initSearch("C:\\","");
+        List<FileResult> filesR=search.initSearch(path,fileName);
         //List<FileResult> filesR=search.initSearch(path,fileName, ext, dateA); //this is what the model is returned// sobrecargar el constructor
 
         //this is what the controller made for iterate all what the model is passed and set the result table
@@ -73,6 +75,9 @@ public class Controller
 
      for(FileResult f: filesR)
         {
+            String[] data= {"1","2","3","4"};
+            this.SearchC.getTableModel().addRow(data);
+
             //this.SearchC.getPanel().getModel().addRow("{"+f.getPath()+","+f.getFileName()+"}"); // this is for return the added rows in the table the values wll return.
             System.out.println("path:"+ f.getPath()+"; filename="+ f.getFileName());
         }

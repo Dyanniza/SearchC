@@ -10,7 +10,7 @@
  *
  */
 
-package com.fundation.search.model;
+package main.java.com.fundation.search.model;
 
 // Class created to collect the result of the search
 public class FileResult

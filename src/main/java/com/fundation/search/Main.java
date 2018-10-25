@@ -10,11 +10,11 @@
  *
  */
 
-package com.fundation.search;
+package main.java.com.fundation.search;
 
 
-import com.fundation.search.controler.Controller;
-import com.fundation.search.view.MainWindow;
+import main.java.com.fundation.search.controler.Controller;
+
 
 public class Main
 {

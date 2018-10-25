@@ -6,7 +6,7 @@
  *  disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
 
-package com.fundation.search.view;
+package main.java.com.fundation.search.view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;

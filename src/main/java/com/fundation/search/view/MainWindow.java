@@ -5,10 +5,10 @@
  *  This software is the confidential and proprietary information of  Jalasoft, ("Confidential Information").  You shall not
  *  disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
-package com.fundation.search.view;
+package main.java.com.fundation.search.view;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.GridLayout;
 
 public class MainWindow extends JFrame
@@ -43,4 +43,12 @@ public class MainWindow extends JFrame
      {
          return panelSearch;
      }
+
+     public PanelSearchResults getModel()
+    {
+        return panelResults;
+    }
+
+    public DefaultTableModel getTableModel(){ return panelResults.getTableModel();}
+
 }
