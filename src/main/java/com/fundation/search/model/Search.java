@@ -6,9 +6,9 @@
  *  This software is the confidential and proprietary information of  Jalasoft, ("Confidential Information").  You shall not
  * disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
-package com.fundation.search.model;
+package main.java.com.fundation.search.model;
 
-import com.fundation.search.controler.Controller;
+//import main.java.com.fundation.search.Controller;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -55,13 +55,5 @@ public class Search {
 
         return result;
     }
-    public static void main (String [] arg)
-    {
-        Search s= new Search();
-        for (FileResult path : s.initSearch("C:\\New folder", "test.txt"))
-        {
-            System.out.println(path);
-        }
-
-    }
+    
 }

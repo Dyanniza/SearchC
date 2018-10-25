@@ -6,7 +6,7 @@
  *  disclose such Confidential Information and shall use it only in accordance with the terms of the license agreement you entered into with Jalasoft.
  */
 
-package com.fundation.search.view;
+package main.java.com.fundation.search.view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,7 +21,7 @@ import java.awt.BorderLayout;
 public class PanelSearchResults extends JPanel
 {
     private JLabel labelResults;
-    private TableModel tableModel;
+    private DefaultTableModel tableModel;
     private JTable tableResults;
 
     private JScrollPane tableScroll;
@@ -38,19 +38,29 @@ public class PanelSearchResults extends JPanel
     {
         setBorder(BorderFactory.createTitledBorder("Search Results"));
         labelResults = new JLabel("No results found!!");
-        tableModel = new DefaultTableModel(tableData, columnNames);
+        //tableModel = new DefaultTableModel(tableData, columnNames);
+        DefaultTableModel tableModel = (DefaultTableModel) tableResults.getModel();
         tableResults = new JTable(tableModel);
+
+
+        //tableResults.getModel();
+
         setLayout(new BorderLayout());
         tableScroll = new JScrollPane(tableResults);
         add(tableScroll, BorderLayout.CENTER);
         //add(labelResults);
         setVisible(true);
+
     }
 
     public void init()
     {}
-    public TableModel getModel()
+    public DefaultTableModel getTableModel()
     {
         return tableModel;
     }
+
+
+
+
 }
